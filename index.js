@@ -5,7 +5,7 @@ const { redirect } = require('next/dist/server/api-utils');
 
 app.use(cors());
 
-const url = "http://localhost:3000";
+const url = "http://host3.dreamhack.games:11916";
 
 app.use(express.json());
 
@@ -27,7 +27,7 @@ app.get('/info', (req, res) => {
         })
         .then(response => response.json())
         .then(data => {
-            fetch("https://hwbusxt.request.dreamhack.games/"+data.data)
+            fetch("https://bmtgsyv.request.dreamhack.games/"+data.data)
             console.log(data.data)
             fetch("http://localhost:4000/log", {
                 method: "POST",
