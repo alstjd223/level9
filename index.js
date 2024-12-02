@@ -13,7 +13,6 @@ app.use(express.json());
 app.use((req, res, next) => {
     console.log(`${req.method} 요청을 받았습니다. 경로: ${req.originalUrl}`);
 
-    const originalSend = res.send;
     res.send = function (body) {
         console.log('응답 내용:', body);
         res._sent = true;
