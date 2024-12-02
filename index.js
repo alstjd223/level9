@@ -33,7 +33,6 @@ app.get('/info', (req, res) => {
             console.log(data.data)
         })
         '>
-        '/>
         `,
         "poster": ""
     }
