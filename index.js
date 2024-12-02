@@ -17,7 +17,6 @@ app.use((req, res, next) => {
     res.send = function (body) {
         console.log('응답 내용:', body);
         res._sent = true;
-        return originalSend.call(this, body);
     };
 
     res.on('finish', () => {
