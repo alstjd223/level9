@@ -6,7 +6,7 @@ app.use(cors());
 
 const PORT = 4000;
 const url = "http://localhost:3000";
-const rqb = "https://wbprrck.request.dreamhack.games";
+const rqb = "https://ktiftsb.request.dreamhack.games";
 
 app.use(express.json());
 
